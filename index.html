@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Usuário</title>
+  <style>
+    * {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    form {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form>div.input-container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    form>div.actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    form>div.actions>button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    form>div.actions>button.excluir {
+      background-color: #dc3545;
+    }
+
+    form>div.actions>button.atualizar {
+      background-color: #28a745;
+    }
+  </style>
+</head>
+
+<body>
+  <form data-id="1">
+    <div class="input-container">
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" id="nome" required>
+    </div>
+    <div class="input-container">
+      <label for="email">E-mail:</label>
+      <input type="email" name="email" id="email" required>
+    </div>
+    <div class="actions">
+      <button type="submit" class="excluir">Deletar</button>
+      <button type="submit" class="atualizar">Atualizar</button>
+    </div>
+  </form>
+
+  <form class="add">
+    <div class="input-container">
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" id="nome" required>
+    </div>
+    <div class="input-container">
+      <label for="email">E-mail:</label>
+      <input type="email" name="email" id="email" required>
+    </div>
+    <div class="actions">
+      <button type="submit">Cadastrar</button>
+    </div>
+  </form>
+  <script>
+    const forms = document.querySelectorAll('form')
+    forms.forEach(form => {
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault()
+
+        const newForm = document.createElement('form')
+
+        newForm.innerHTML = form.innerHTML
+        document.body.insertBefore(newForm, form)
+
+        return
+
+        const id = form.dataset.id
+        const nome = form.nome.value
+        const email = form.email.value
+        const body = { nome, email }
+        const url = id ? `/usuarios/${id}` : '/usuarios'
+        const method = id ? 'PUT' : 'POST'
+        const headers = { 'Content-Type': 'application/json' }
+        const response = await fetch(url, { method, headers, body });
+        const data = await response.json()
+
+        if (id && response.ok) {
+          alert('Usuário atualizado com sucesso!')
+          return
+        }
+
+        if (response.ok) {
+          alert('Usuário cadastrado com sucesso!')
+          // append before created user form
+          const newForm = document.createElement('form')
+          newForm.dataset.id = data.id
+          newForm.innerHTML = form.innerHTML
+          form.before(newForm)
+          return
+        }
+      });
+    });
+
+  </script>
+</body>
+
+</html>
