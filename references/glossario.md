@@ -1,7 +1,19 @@
 # Glossário
 
+## CRUD - Create, Read, Update, Delete <a id=crud />
+--------------------------------------------------------
+
+CRUD é um acrônimo para Create, Read, Update, Delete, ele é utilizado para descrever as operações básicas de um sistema, as operações são:
+
+- **Create**: Criar um novo recurso.
+- **Read**: Ler um recurso existente.
+- **Update**: Atualizar um recurso existente.
+- **Delete**: Deletar um recurso existente.
+
+Apesar de não ter referência com banco de dados, ou qualquer outra tecnologia, o CRUD é comumente utilizado para descrever operações em um banco de dados, por exemplo, criar um novo registro, ler um registro existente, atualizar um registro existente, deletar um registro existente.
+
 ## Path (_Caminho ou Diretório ou Endedereço ou Rota, etc._) <a id=#path />
--------------------------------------------------------------------------------
+--------------------------------------------------------
 
 Path é o caminho do diretório que deseja acessar, pode ser um caminho absoluto ou relativo, chamamos de caminho absoluto o caminho que inicia na raiz do sistema de arquivos e o caminho relativo o caminho que inicia no diretório atual.
 
@@ -63,7 +75,7 @@ considere a seguinte estrutura de diretórios:
 ```
 
 ## Cliente e Servidor <a id=client-server />
--------------------------------------------------------------------------------
+--------------------------------------------------------
 
 O cliente e o servidor são dois sistemas que se comunicam entre si, o cliente é o sistema que envia a requisição e o servidor é o sistema que recebe a requisição e envia uma resposta.
 
@@ -86,7 +98,7 @@ Cliente é um sistema que envia requisições para um servidor, ele é composto 
 Servidor é um sistema que recebe requisições de um cliente e envia uma resposta, ele é composto por um software que recebe a requisição, processa a requisição e envia uma resposta, por exemplo, um servidor web (Apache, Nginx, etc), um servidor de banco de dados (MySQL, PostgreSQL, etc), um servidor de arquivos (FTP, SFTP, etc), etc.
 
 ## JSON - Javascript Object Notation <a id=json />
--------------------------------------------------------------------------------
+--------------------------------------------------------
 
 O JSON (Javascript Object Notation) é um formato de texto utilizado para representar objetos, ele é composto por pares de chave e valor, os valores podem ser strings, números, objetos, arrays, booleanos ou nulos.
 
@@ -125,7 +137,7 @@ O formato também permite aninhamento de objetos e arrays, por exemplo:
 ```
 
 ## Endereço IP <a id=ip-address />
--------------------------------------------------------------------------------
+--------------------------------------------------------
 
 O endereço IP (Internet Protocol) é um número que identifica um dispositivo em uma rede, ele é composto por 4 números de 0 a 255 separados por pontos, por exemplo, `192.168.0.1`, no protocolo IPv4 o endereço IP é composto por 32 bits, já no protocolo IPv6 o endereço IP é composto por 128 bits.
 
@@ -134,7 +146,7 @@ O endereço IP (Internet Protocol) é um número que identifica um dispositivo e
 > Considere que o endereço IP é o número de telefone ou endereço do dispositivo, ele é utilizado para identificar o dispositivo na rede.
 
 ## Porta (redes de computadores) <a id=port />
--------------------------------------------------------------------------------
+--------------------------------------------------------
 
 A porta é um número que identifica um serviço em um dispositivo, ela é composta por 16 bits, ela é utilizada para identificar o serviço que deseja acessar, por exemplo, o serviço HTTP utiliza a porta 80, o serviço HTTPS utiliza a porta 443.
 
@@ -143,7 +155,7 @@ A porta é um número que identifica um serviço em um dispositivo, ela é compo
 > Considere que o servidor é um predio, o endereço IP é o número do predio e a porta é o número do apartamento, cada apartamento é um serviço diferente.
 
 ## URL - Uniform Resource Locator <a id=url />
--------------------------------------------------------------------------------
+--------------------------------------------------------
 
 A URL (Uniform Resource Locator) é um endereço que identifica um recurso na internet, ela é composta por 3 partes, o protocolo, o domínio e o caminho, por exemplo, `https://www.google.com.br/search?q=hello`.
 
@@ -179,7 +191,7 @@ Entendendo a query string:
 > Considere que a URL é o endereço do recurso, o protocolo é a forma de acessar o recurso, o domínio é o endereço do recurso, o caminho é o diretório do recurso e a query string é a informação adicional do recurso, por exemplo qual a linguagem que deseja acessar o recurso.
 
 ## Protocolo HTTP <a id=http />
--------------------------------------------------------------------------------
+--------------------------------------------------------
 
 O HTTP (Hypertext Transfer Protocol) é um protocolo de comunicação utilizado para transferir informações na internet, ele é utilizado para acessar páginas web, ele é composto por uma requisição e uma resposta.
 
@@ -339,7 +351,7 @@ Tanto a [requisição](#http-request) quanto a [resposta](#http-response) do [Pr
 > 3. A linha em branco entre os cabeçalhos e o corpo é obrigatória, ela é utilizada para separar os cabeçalhos do corpo.
 
 ## API - Application Programming Interface <a id=api />
--------------------------------------------------------------------------------
+--------------------------------------------------------
 
 API (Application Programming Interface) é um conjunto de regras e padrões que permite a comunicação entre sistemas, ela é utilizada para acessar recursos de um sistema, por exemplo, acessar informações de um banco de dados, acessar informações de um serviço, etc.
 
