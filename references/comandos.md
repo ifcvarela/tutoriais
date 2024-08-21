@@ -41,23 +41,27 @@ Para que o comando `npm init` seja executado, sem que seja necessário responder
 > 
 > Para aceitar o valor padrão sugerido pelo no modo interativo, basta pressionar a tecla `Enter`.
 
-## npm init -y <a id="npm-init-y" />
+### npm init -y <a id="npm-init-y" />
 
 Conforme mencionado anteriormente em [npm init](#npm-init), este comando cria o arquivo de configuração `package.json` com as informações padrão, sem a necessidade de responder as perguntas.
 
-## npm install <a id="npm-install" />
+## npm install _(npm i)_ <a id="npm-install" />
 
 ...
 
-### npm install -D <a id="npm-install-d" />
+### npm install --save-dev _(npm i -D)_ <a id="npm-install-d" />
 
 ...
 
-### npm uninstall <a id="npm-uninstall" />
+## npm uninstall <a id="npm-uninstall" />
 
 ...
 
-### npm run <a id="npm-run" />
+## npm run <a id="npm-run" />
+
+...
+
+## tsc <a id="tsc" />
 
 ...
 
@@ -65,8 +69,10 @@ Conforme mencionado anteriormente em [npm init](#npm-init), este comando cria o 
 
 ...
 
-### mkdir <a id="mkdir" />
+## mkdir <a id="mkdir" />
 
 ...
 
-### touch <a id="touch" />
+## touch <a id="touch" />
+
+...
