@@ -60,3 +60,13 @@ Conforme mencionado anteriormente em [npm init](#npm-init), este comando cria o 
 ### npm run <a id=#npm-run />
 
 ...
+
+### tsc --init <a id=#tsc-init />
+
+...
+
+### mkdir <a id=#mkdir />
+
+...
+
+### touch <a id=#touch />

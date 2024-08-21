@@ -41,9 +41,9 @@ touch .gitignore
 ```
 
 > 🧠 **Entendendo os Comandos Utilizados**
-> 1. [`npm init -y`](references/comandos.md#npm-init) - Inicializa um projeto Node.js com as configurações padrão. em outras palavras, cria o arquivo `package.json` com as informações padrão.
+> 1. [`npm init -y`](references/comandos.md#npm-init-y) - Inicializa um projeto Node.js com as configurações padrão. em outras palavras, cria o arquivo `package.json` com as informações padrão.
 > 2. [`npm install express sqlite3 sqlite`](references/comandos.md#npm-install) - Instala as dependências do projeto.
-> 3. [`npm install --save-dev typescript nodemon ts-node @types/express`](references/comandos.md#npm-install) - Instala as dependências de desenvolvimento do projeto.
+> 3. [`npm install --save-dev typescript nodemon ts-node @types/express`](references/comandos.md#npm-install-d) - Instala as dependências de desenvolvimento do projeto.
 > 4. [`npx tsc --init`](references/comandos.md#tsc-init) - Inicializa o arquivo de configuração do Typescript. Em outras palavras, cria o arquivo `tsconfig.json`.
 > 5. [`mkdir public`](references/comandos.md#mkdir) - Cria a pasta `public`.
 > 6. [`touch public/index.html`](references/comandos.md#touch) - Cria o arquivo `index.html` na pasta `public`.
