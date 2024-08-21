@@ -170,7 +170,7 @@ app.listen(port, () => {
 ⚡⚡⚡⚡DESCREVER O CÓDIGO AQUI: NÃO ESQUECER
 
 > ⚠️ **Notas**:
-> 1. Este código não é seguro para ser utilizado em produção, pois não há validação de dados, tratamento de erros, autenticação, autorização, etc. Este código é apenas um exemplo didático para fins de aprendizado.
+> 1. è muito importante notar que este código não é seguro para ser utilizado em produção, pois não há validação de dados, tratamento de erros, autenticação, autorização, etc. Este código é apenas um exemplo didático para fins de aprendizado.
 
 ## Configuração do public/index.html
 
@@ -294,13 +294,6 @@ form button {
   cursor: pointer;
 }
 
-form button[data-action=cancel] {
-  background-color: transparent;
-  color: #dc3545;
-  margin-right: auto;
-  padding-inline: .5rem;
-}
-
 form button[data-action=update] {
   background-color: #007bff;
 }
@@ -395,3 +388,4 @@ document.addEventListener('submit', async (event) => {
 
 > ⚠️ **Notas**:
 > 1. É muito importante notar que este código não é seguro para ser utilizado em produção, pois não há validação de dados, tratamento de erros, autenticação, autorização, etc. Este código é apenas um exemplo didático para fins de aprendizado.
+> 2. Este código também não apresenta feedback ao usuário, como mensagens de sucesso, somente uma mensagem de erro genérica utilizando alertas do navegador.
