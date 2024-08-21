@@ -174,22 +174,23 @@ app.listen(port, () => {
 ```html
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Usuários</title>
-    <link rel="stylesheet" href="main.css">
-    <script src="main.js" defer></script>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Usuários</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <main>
     <form>
       <div class="input-container">
         <label for="name">Nome</label>
-        <input type="text" name="name" placeholder="Nome">
+        <input type="text" name="name">
       </div>
       <div class="input-container">
         <label for="email">E-mail</label>
-        <input type="email" name="email" placeholder="E-mail">
+        <input type="email" name="email">
       </div>
       <div class="actions-container">
         <button data-action="delete">Excluir</button>
@@ -197,7 +198,8 @@ app.listen(port, () => {
         <button data-action="create">Cadastrar</button>
       </div>
     </form>
-  </body>
+  </main>
+</body>
 </html>
 ```
 
@@ -208,22 +210,30 @@ app.listen(port, () => {
   box-sizing: border-box;
 }
 
-body {
+:root {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 1rem;
-  height: 100vh;
-  background-color: #f0f0f0;
+}
+
+body {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  padding: 1rem;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+main {
+  display: flex;
   gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 form {
-  background-color: #fff;
   display: inline-block;
+  background-color: #fff;
   padding: 1.5rem;
   margin: 0;
   border-radius: 5px;
@@ -246,27 +256,26 @@ form:not([data-id]) {
 }
 
 form .input-container {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 form label {
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: .25rem;
 }
 
 form input {
   width: 100%;
-  padding: 10px;
+  padding: .6rem;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 form .actions-container {
   display: flex;
-  justify-content: space-between;
-  gap: .5rem;
   justify-content: flex-end;
+  gap: .5rem;
 }
 
 form button {
@@ -301,72 +310,73 @@ form button[data-action=create] {
 ## Configuração do public/main.js
 
 ```javascript
-const mainForm = document.querySelector('form');
+const mainForm = document.querySelector('form')
 
 void async function () {
-  const response = await fetch('/users');
-  const users = await response.json();
+  const response = await fetch('/users')
+  const users = await response.json()
   users.forEach(user => {
-    const newForm = mainForm.cloneNode(true);
-    newForm.name.value = user.name;
-    newForm.email.value = user.email;
-    newForm.dataset.id = user.id;
-    newForm.id.readOnly = true;
-    mainForm.before(newForm);
+    const newForm = mainForm.cloneNode(true)
+    newForm.name.value = user.name
+    newForm.email.value = user.email
+    newForm.dataset.id = user.id
+    newForm.id.readOnly = true
+    mainForm.before(newForm)
   })
   console.log(users)
-}();
+}()
 
 document.addEventListener('submit', async (event) => {
-  event.preventDefault();
+  event.preventDefault()
   const action = event.submitter.dataset.action ?? null
-  const currentForm = event.target;
+  const currentForm = event.target
   
   if (action === 'delete') {
-    const id = currentForm.dataset.id;
-    const method = 'DELETE';
-    const url = `/users/${id}`;
-    const response = await fetch(url, { method });
+    const id = currentForm.dataset.id
+    const method = 'DELETE'
+    const url = `/users/${id}`
+    const response = await fetch(url, { method })
     if (!response.ok)
       return console.error('Error:', response.statusText)
-    currentForm.remove();
+    currentForm.remove()
     return
   }
   
   if (action === 'update') {
-    const id = currentForm.dataset.id;
-    const method = 'PUT';
-    const url = `/users/${id}`;
+    const id = currentForm.dataset.id
+    const method = 'PUT'
+    const url = `/users/${id}`
     const headers = { 'Content-Type': 'application/json' }
     const name = currentForm.name.value
     const email = currentForm.email.value
     const body = JSON.stringify({ name, email })
-    const response = await fetch(url, { method, headers, body, });
+    const response = await fetch(url, { method, headers, body, })
     if (!response.ok)
       return console.error('Error:', response.statusText)
-    const responseData = await response.json();
-    currentForm.name.value = responseData.name;
-    currentForm.email.value = responseData.email;
+    const responseData = await response.json()
+    currentForm.name.value = responseData.name
+    currentForm.email.value = responseData.email
     return
   }
   
   if (action === 'create') {
-    const method = 'POST';
-    const url = '/users';
+    const method = 'POST'
+    const url = '/users'
     const headers = { 'Content-Type': 'application/json' }
-    const name = currentForm.name.value;
-    const email = currentForm.email.value;
-    const body = JSON.stringify({ name, email });
-    const response = await fetch(url, { method, headers, body });
+    const name = currentForm.name.value
+    const email = currentForm.email.value
+    const body = JSON.stringify({ name, email })
+    const response = await fetch(url, { method, headers, body })
     if (!response.ok)
       return console.error('Error:', response.statusText)
-    const responseData = await response.json();
-    const newForm = mainForm.cloneNode(true);
-    newForm.name.value = responseData.name;
-    newForm.email.value = responseData.email;
-    newForm.dataset.id = responseData.id;
-    newForm.id.readOnly = true;
-    mainForm.before(newForm);
+    const responseData = await response.json()
+    const newForm = mainForm.cloneNode(true)
+    newForm.name.value = responseData.name
+    newForm.email.value = responseData.email
+    newForm.dataset.id = responseData.id
+    newForm.id.readOnly = true
+    mainForm.reset()
+    mainForm.before(newForm)
     return
   }
 })
