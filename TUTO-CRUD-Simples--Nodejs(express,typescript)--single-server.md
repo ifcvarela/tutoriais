@@ -167,9 +167,14 @@ app.listen(port, () => {
 })
 ```
 
+⚡⚡⚡⚡DESCREVER O CÓDIGO AQUI: NÃO ESQUECER
+
+> ⚠️ **Notas**:
+> 1. Este código não é seguro para ser utilizado em produção, pois não há validação de dados, tratamento de erros, autenticação, autorização, etc. Este código é apenas um exemplo didático para fins de aprendizado.
+
 ## Configuração do public/index.html
 
-⭐⭐⭐⭐⭐⭐⭐⭐terminar isso
+O arquivo `index.html` será responsável por exibir um formulário para cadastrar usuários, alterar usuários e excluir usuários, além de exibir a lista de usuários cadastrados.
 
 ```html
 <!DOCTYPE html>
@@ -204,6 +209,8 @@ app.listen(port, () => {
 ```
 
 ## Configuração do public/main.css
+
+O arquivo `main.css` será responsável por estilizar os formulários. Este não é um tutorial de [CSS](references/glossario.md#css), por isso, o foco é apenas estilizar os formulários de forma simples e funcional.
 
 ```css
 * {
@@ -309,6 +316,8 @@ form button[data-action=create] {
 
 ## Configuração do public/main.js
 
+O arquivo `main.js` será responsável por enviar requisições para o servidor, seja para cadastrar, alterar ou excluir usuários, além de exibir a lista de usuários cadastrados. Note que este arquivo faz requisições para as rotas definidas no arquivo `src/index.ts` que é quem de fatos executa as operações no banco de dados.
+
 ```javascript
 const mainForm = document.querySelector('form')
 
@@ -381,3 +390,8 @@ document.addEventListener('submit', async (event) => {
   }
 })
 ```
+
+⚡⚡⚡⚡DESCREVER O CÓDIGO AQUI: NÃO ESQUECER
+
+> ⚠️ **Notas**:
+> 1. É muito importante notar que este código não é seguro para ser utilizado em produção, pois não há validação de dados, tratamento de erros, autenticação, autorização, etc. Este código é apenas um exemplo didático para fins de aprendizado.
