@@ -1,7 +1,6 @@
 # Glossário
 
 ## CRUD - Create, Read, Update, Delete <a id=crud />
--------------------------------------------------------------------------------
 
 CRUD é um acrônimo para Create, Read, Update, Delete, ele é utilizado para descrever as operações básicas de um sistema, as operações são:
 
@@ -13,7 +12,6 @@ CRUD é um acrônimo para Create, Read, Update, Delete, ele é utilizado para de
 Apesar de não ter referência com banco de dados, ou qualquer outra tecnologia, o CRUD é comumente utilizado para descrever operações em um banco de dados, por exemplo, criar um novo registro, ler um registro existente, atualizar um registro existente, deletar um registro existente.
 
 ## Path (_Caminho ou Diretório ou Endedereço ou Rota, etc._) <a id=file-path />
--------------------------------------------------------------------------------
 
 Path é o caminho do diretório que deseja acessar, pode ser um caminho absoluto ou relativo, chamamos de caminho absoluto o caminho que inicia na raiz do sistema de arquivos e o caminho relativo o caminho que inicia no diretório atual.
 
@@ -74,18 +72,14 @@ considere a seguinte estrutura de diretórios:
 ```
 
 ## Cliente e Servidor <a id=client-server />
--------------------------------------------------------------------------------
 
 O cliente e o servidor são dois sistemas que se comunicam entre si, o cliente é o sistema que envia a requisição e o servidor é o sistema que recebe a requisição e envia uma resposta.
 
 > ⚠️ **Atenção**
->
 > 1. Cliente é um software que envia requisições para um servidor, por exemplo, um browser (Google Chrome, Mozilla Firefox, etc), um aplicativo (WhatsApp, Facebook, etc), um script (Python, Javascript, etc), etc.
-> 
 > 2. É de senso comum que servidores são máquinas físicas enormes em algum lugar remoto, no entanto, um servidor pode ser uma máquina física, uma máquina virtual, um container, um serviço, etc. isso significa que um servidor pode ser um computador, um celular, um tablet, um relógio, um carro, um eletrodoméstico, etc. o que o torna um servidor é o fato dele receber e responder requisições de um cliente em uma rede respeitando um protocolo de comunicação.
 
 > 💭 **Abstação**
->
 > Considere que o cliente é um usuário que envia uma carta para um servidor, o servidor é o carteiro que recebe a carta e envia uma resposta.
 
 ### Cliente (_Client_) <a id=client />
@@ -97,7 +91,6 @@ Cliente é um sistema que envia requisições para um servidor, ele é composto 
 Servidor é um sistema que recebe requisições de um cliente e envia uma resposta, ele é composto por um software que recebe a requisição, processa a requisição e envia uma resposta, por exemplo, um servidor web (Apache, Nginx, etc), um servidor de banco de dados (MySQL, PostgreSQL, etc), um servidor de arquivos (FTP, SFTP, etc), etc.
 
 ## JSON - Javascript Object Notation <a id=json />
--------------------------------------------------------------------------------
 
 O JSON (Javascript Object Notation) é um formato de texto utilizado para representar objetos, ele é composto por pares de chave e valor, os valores podem ser strings, números, objetos, arrays, booleanos ou nulos.
 
@@ -136,16 +129,13 @@ O formato também permite aninhamento de objetos e arrays, por exemplo:
 ```
 
 ## Endereço IP <a id=ip-address />
--------------------------------------------------------------------------------
 
 O endereço IP (Internet Protocol) é um número que identifica um dispositivo em uma rede, ele é composto por 4 números de 0 a 255 separados por pontos, por exemplo, `192.168.0.1`, no protocolo IPv4 o endereço IP é composto por 32 bits, já no protocolo IPv6 o endereço IP é composto por 128 bits.
 
 > 💭 **Abstação**
->
 > Considere que o endereço IP é o número de telefone ou endereço do dispositivo, ele é utilizado para identificar o dispositivo na rede.
 
 ## Porta (redes de computadores) <a id=port />
--------------------------------------------------------------------------------
 
 A porta é um número que identifica um serviço em um dispositivo, ela é composta por 16 bits, ela é utilizada para identificar o serviço que deseja acessar, por exemplo, o serviço HTTP utiliza a porta 80, o serviço HTTPS utiliza a porta 443.
 
@@ -154,7 +144,6 @@ A porta é um número que identifica um serviço em um dispositivo, ela é compo
 > Considere que o servidor é um predio, o endereço IP é o número do predio e a porta é o número do apartamento, cada apartamento é um serviço diferente.
 
 ## URL - Uniform Resource Locator <a id=url />
--------------------------------------------------------------------------------
 
 A URL (Uniform Resource Locator) é um endereço que identifica um recurso na internet, ela é composta por 3 partes, o protocolo, o domínio e o caminho, por exemplo, `https://www.google.com.br/search?q=hello`.
 
@@ -190,7 +179,6 @@ Entendendo a query string:
 > Considere que a URL é o endereço do recurso, o protocolo é a forma de acessar o recurso, o domínio é o endereço do recurso, o caminho é o diretório do recurso e a query string é a informação adicional do recurso, por exemplo qual a linguagem que deseja acessar o recurso.
 
 ## Protocolo HTTP <a id=http />
--------------------------------------------------------------------------------
 
 O HTTP (Hypertext Transfer Protocol) é um protocolo de comunicação utilizado para transferir informações na internet, ele é utilizado para acessar páginas web, ele é composto por uma requisição e uma resposta.
 
@@ -229,7 +217,6 @@ Content-Type: application/json
 ```
 
 > 💡 **Dica:**
->
 > Neste exemplo o corpo da requisição é um JSON, o cabeçalho `Content-Type: application/json` informa que o corpo da requisição é um JSON.
 
 #### Métodos HTTP <a id=http-method />
@@ -344,13 +331,11 @@ Os códigos de status 5xx são utilizados para informar que houve um erro no ser
 Tanto a [requisição](#http-request) quanto a [resposta](#http-response) do [Protocolo HTTP](#http) possuem uma estrutura similar, no entanto, a requisição é enviada do cliente para o servidor e a resposta é enviada do servidor para o cliente, os cabeçalhos e o corpo possuem a mesma estrutura, a diferença está na linha primeira linha, a linha de requisição no caso da requisição e a linha de status no caso da resposta.
  
 > ⚠️ **Atenção**
-> 
 > 1. O protocolo HTTP é um protocolo de texto, ou seja, as requisições e respostas são enviadas em texto puro.
 > 2. O protocolo HTTP é um protocolo de comunicação sem estado, ou seja, ele não mantém o estado da comunicação, cada requisição é independente da outra.
 > 3. A linha em branco entre os cabeçalhos e o corpo é obrigatória, ela é utilizada para separar os cabeçalhos do corpo.
 
 ## API - Application Programming Interface <a id=api />
--------------------------------------------------------------------------------
 
 API (Application Programming Interface) é um conjunto de regras e padrões que permite a comunicação entre sistemas, ela é utilizada para acessar recursos de um sistema, por exemplo, acessar informações de um banco de dados, acessar informações de um serviço, etc.
 
@@ -381,7 +366,6 @@ A grande peculiaridade da RESTFul API é que ela utiliza os [métodos HTTP](#htt
 | Delete | DELETE      | DELETE           | 200, 204, 400, 401, 403, 404, 409, 500           |
 
 > ⚠️ **Atenção**
-> 
 > RESTFul vs REST: O termo RESTFul é utilizado para descrever uma API que segue os princípios da arquitetura REST, no entanto, o termo REST é utilizado para descrever a arquitetura em si, ou seja, a arquitetura REST é composta por um conjunto de princípios e regras, já a API RESTFul é uma API que segue esses princípios e regras.
 
 ## HTML - HyperText Markup Language <a id=html />
@@ -408,7 +392,6 @@ Note que as tags podem ser aninhadas, ou seja, uma tag pode conter outra tag, po
 
 
 > 💭 **Abstação**
-> 
 > - Imagine que a frase "eu gosto de bolo e suco", e é necessário "marcar" a palavra "bolo" como sendo importante, é possível sublinhar a palavra "bolo" ou colocar em negrito, o HTML é justamente utilizado para "marcar".
 > - Ainda utilizando o exemplo anterior, imagine que a palavra "bolo" será marcada com um sublinhado, a palavra "eu" será marcada com italico e a frase do início da frase até "bolo" será marcada com negrito, neste caso a frase com estas marcações ficaria da segunte forma: `<b><i>eu</i> gosto de <u>bolo</u></b> e suco`.
 > - Resultado seria: 
@@ -505,7 +488,6 @@ Entendendo o codigo:
 - `#id`: é o seletor de id, ele é utilizado para selecionar a tag com o id `id`, neste caso, o texto `Seletor de ID` será verde.
 
 > ⚠️ **Atenção**
-> 
 > O exemplo acima é um exemplo simples, onde diretamente em um arquivo HTML é adicionado o CSS, no entanto, o mais comum é adicionar o CSS em um arquivo separado, o arquivo CSS é adicionado ao HTML utilizando a tag `<link>`, por exemplo, `<link rel="stylesheet" href="style.css">`, onde `style.css` é o arquivo CSS a ser importado.
 
 para mais informações sobre CSS, consulte a documentação da [Mozilla Developer Network](https://developer.mozilla.org/pt-BR/docs/Web/CSS) ou da [W3Schools](https://www.w3schools.com/css).
@@ -523,7 +505,6 @@ Por ser uma linguagem muito ampla não conseguimos abordar todos os aspectos do 
 O TypeScript é uma linguagem ou superset do Javascript, o propósito principal do TypeScript é adicionar tipagem ao Javascript, ou seja, adicionar tipos de dados a variáveis, funções, classes, etc. tornando o código mais seguro e mais fácil de manter.
 
 > 💡 **Dica**
->
 > - O TypeScript é uma linguagem de programação muito poderosa, no entanto, é importante lembrar que o TypeScript é convertido para Javascript antes de ser executado, isso significa que o TypeScript é uma linguagem de programação que roda em qualquer lugar onde o Javascript roda.
 > - Superset é um termo utilizado para descrever uma linguagem que é uma extensão de outra linguagem, por exemplo, o TypeScript é um superset do Javascript, o Sass é um superset do CSS, etc.
 
