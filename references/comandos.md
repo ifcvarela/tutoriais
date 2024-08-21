@@ -6,24 +6,29 @@
 
 O comando `cd` é utilizado para mudar o diretório atual, para isso basta digitar `cd` seguido do [caminho](glossario.md#file-path) do diretório que deseja acessar, o caminho pode ser absoluto ou relativo.
 
-> ⭐ **Exemplos**
->` Linux e MacOS`
-> ```bash
-> cd /pai/filho/neto
-> cd bisneto
-> cd ../..
-> cd ..
-> ``` 
-> `Windows (powershell)`
-> ```powershell
-> cd C:\pai\filho\neto
-> cd bisneto
-> cd ..\..
-> cd ..
-> ```
+> ⭐ **Exemplo**
+>
+> 1. ` Linux e MacOS`
+>
+>    ```bash
+>    cd /pai/filho/neto
+>    cd bisneto
+>    cd ../..
+>    cd ..
+>    ``` 
+>
+> 2. `Windows (powershell)`
+>
+>    ```powershell
+>    cd C:\pai\filho\neto
+>    cd bisneto
+>    cd ..\..
+>    cd ..
+>    ```
 
-> 💡**Dica**
-> Por padrão, os terminais sempre mostram o diretório atual, para saber em qual diretório você está, basta olhar para o terminal.
+> 💡 **Dica**
+>
+> 1. Por padrão, os terminais sempre mostram o diretório atual, para saber em qual diretório você está, basta olhar para o terminal.
 
 
 ## npm init <a id=npm-init />
@@ -34,7 +39,7 @@ Para que o comando `npm init` seja executado, sem que seja necessário responder
 
 > 💡 **Dica**
 > 
-> Para aceitar o valor padrão sugerido pelo no modo interativo, basta pressionar a tecla `Enter`.
+> 1. Para aceitar o valor padrão sugerido pelo no modo interativo, basta pressionar a tecla `Enter`.
 
 ### npm init -y <a id=npm-init-y />
 

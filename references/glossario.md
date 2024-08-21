@@ -56,7 +56,6 @@ O `..` é utilizado para acessar o diretório anterior ao diretório atual, por 
 > ⚠️ **Atenção**
 >
 > 1. neste exemplo, a pasta `/pai` esta representando uma unidade de disco, no Windows seia algo como `C:\`, no Linux e MacOS seria `/`.
->
 > 2. O Windows utiliza a barra invertida `\` para separar os diretórios, já o Linux e o MacOS utilizam a barra `/`.
  
 Path é o caminho do diretório que deseja acessar, pode ser um caminho absoluto ou relativo, chamamos de caminho absoluto o caminho que inicia na raiz do sistema de arquivos e o caminho relativo o caminho que inicia no diretório atual.
@@ -76,10 +75,12 @@ considere a seguinte estrutura de diretórios:
 O cliente e o servidor são dois sistemas que se comunicam entre si, o cliente é o sistema que envia a requisição e o servidor é o sistema que recebe a requisição e envia uma resposta.
 
 > ⚠️ **Atenção**
+>
 > 1. Cliente é um software que envia requisições para um servidor, por exemplo, um browser (Google Chrome, Mozilla Firefox, etc), um aplicativo (WhatsApp, Facebook, etc), um script (Python, Javascript, etc), etc.
 > 2. É de senso comum que servidores são máquinas físicas enormes em algum lugar remoto, no entanto, um servidor pode ser uma máquina física, uma máquina virtual, um container, um serviço, etc. isso significa que um servidor pode ser um computador, um celular, um tablet, um relógio, um carro, um eletrodoméstico, etc. o que o torna um servidor é o fato dele receber e responder requisições de um cliente em uma rede respeitando um protocolo de comunicação.
 
 > 💭 **Abstação**
+>
 > Considere que o cliente é um usuário que envia uma carta para um servidor, o servidor é o carteiro que recebe a carta e envia uma resposta.
 
 ### Cliente (_Client_) <a id=client />
@@ -133,6 +134,7 @@ O formato também permite aninhamento de objetos e arrays, por exemplo:
 O endereço IP (Internet Protocol) é um número que identifica um dispositivo em uma rede, ele é composto por 4 números de 0 a 255 separados por pontos, por exemplo, `192.168.0.1`, no protocolo IPv4 o endereço IP é composto por 32 bits, já no protocolo IPv6 o endereço IP é composto por 128 bits.
 
 > 💭 **Abstação**
+>
 > Considere que o endereço IP é o número de telefone ou endereço do dispositivo, ele é utilizado para identificar o dispositivo na rede.
 
 ## Porta (redes de computadores) <a id=port />
@@ -216,8 +218,9 @@ Content-Type: application/json
 {"name":"John Doe"}
 ```
 
-> 💡 **Dica:**
-> Neste exemplo o corpo da requisição é um JSON, o cabeçalho `Content-Type: application/json` informa que o corpo da requisição é um JSON.
+> 💡 **Dica**
+>
+> 1. Neste exemplo o corpo da requisição é um JSON, o cabeçalho `Content-Type: application/json` informa que o corpo da requisição é um JSON.
 
 #### Métodos HTTP <a id=http-method />
 
@@ -331,6 +334,7 @@ Os códigos de status 5xx são utilizados para informar que houve um erro no ser
 Tanto a [requisição](#http-request) quanto a [resposta](#http-response) do [Protocolo HTTP](#http) possuem uma estrutura similar, no entanto, a requisição é enviada do cliente para o servidor e a resposta é enviada do servidor para o cliente, os cabeçalhos e o corpo possuem a mesma estrutura, a diferença está na linha primeira linha, a linha de requisição no caso da requisição e a linha de status no caso da resposta.
  
 > ⚠️ **Atenção**
+>
 > 1. O protocolo HTTP é um protocolo de texto, ou seja, as requisições e respostas são enviadas em texto puro.
 > 2. O protocolo HTTP é um protocolo de comunicação sem estado, ou seja, ele não mantém o estado da comunicação, cada requisição é independente da outra.
 > 3. A linha em branco entre os cabeçalhos e o corpo é obrigatória, ela é utilizada para separar os cabeçalhos do corpo.
@@ -346,13 +350,9 @@ O termo RESTFul é uma abreviação de Representational State Transfer, ele foi 
 Uma API RESTFul é composta por 5 princípios, os princípios são:
 
 1. **Cliente-Servidor**: O cliente e o servidor são separados, eles podem ser desenvolvidos e evoluídos independentemente.
-
 2. **Sem Estado**: O servidor não mantém o estado da comunicação, cada requisição é independente da outra.
-
 3. **Cache**: O servidor deve informar se a resposta pode ser armazenada em cache.
-
 4. **Interface Uniforme**: A interface da API deve ser uniforme, os recursos devem ser acessados da mesma forma.
-
 5. **Sistema em Camadas**: O sistema pode ser composto por várias camadas, por exemplo, um servidor de aplicação, um servidor de banco de dados, etc.
 
 A grande peculiaridade da RESTFul API é que ela utiliza os [métodos HTTP](#http-method) para acessar os recursos e executa operações CRUD (Create, Read, Update, Delete) nos recursos, cinculando as operações CRUD com os métodos HTTP e operações do banco de dados.
@@ -366,6 +366,7 @@ A grande peculiaridade da RESTFul API é que ela utiliza os [métodos HTTP](#htt
 | Delete | DELETE      | DELETE           | 200, 204, 400, 401, 403, 404, 409, 500           |
 
 > ⚠️ **Atenção**
+>
 > RESTFul vs REST: O termo RESTFul é utilizado para descrever uma API que segue os princípios da arquitetura REST, no entanto, o termo REST é utilizado para descrever a arquitetura em si, ou seja, a arquitetura REST é composta por um conjunto de princípios e regras, já a API RESTFul é uma API que segue esses princípios e regras.
 
 ## HTML - HyperText Markup Language <a id=html />
@@ -488,6 +489,7 @@ Entendendo o codigo:
 - `#id`: é o seletor de id, ele é utilizado para selecionar a tag com o id `id`, neste caso, o texto `Seletor de ID` será verde.
 
 > ⚠️ **Atenção**
+> 
 > O exemplo acima é um exemplo simples, onde diretamente em um arquivo HTML é adicionado o CSS, no entanto, o mais comum é adicionar o CSS em um arquivo separado, o arquivo CSS é adicionado ao HTML utilizando a tag `<link>`, por exemplo, `<link rel="stylesheet" href="style.css">`, onde `style.css` é o arquivo CSS a ser importado.
 
 para mais informações sobre CSS, consulte a documentação da [Mozilla Developer Network](https://developer.mozilla.org/pt-BR/docs/Web/CSS) ou da [W3Schools](https://www.w3schools.com/css).

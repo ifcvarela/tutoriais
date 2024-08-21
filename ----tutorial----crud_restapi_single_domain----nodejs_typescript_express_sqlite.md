@@ -5,7 +5,8 @@ O propósito deste tutorial é criar um servidor simples utilizando Node.js com 
 Neste projeto será criado um servidor único que servirá tanto os arquivos [estáticos (HTML, CSS, JS, imagens, etc)](references/glossario.md#arquivos-estaticos) enquanto uma [API RESTful](references/glossario.md#restful-api) para realizar operações de [CRUD (Create, Read, Update, Delete)](references/glossario.md#crud) em um banco de dados [SQLite](references/glossario.md#sqlite), não sendo necessário a implementação de [CORS (Cross-Origin Resource Sharing)](references/glossario.md#cors), pois o servidor e o cliente estarão no mesmo domínio.
 
 > ⚠️ **Aviso Importante**:
-> - Este não é um exemplo de aplicação pronta para produção, pois não possui validação de dados, tratamento de erros, autenticação, autorização, etc. Este é um exemplo didático para fins de aprendizado.
+>
+> 1. Este não é um exemplo de aplicação pronta para produção, pois não possui validação de dados, tratamento de erros, autenticação, autorização, etc. Este é um exemplo didático para fins de aprendizado.
 
 ## Pré-requisitos
 
@@ -41,6 +42,7 @@ touch .gitignore
 ```
 
 > 🧠 **Entendendo os Comandos Utilizados**
+>
 > 1. [`npm init -y`](references/comandos.md#npm-init-y) - Inicializa um projeto Node.js com as configurações padrão. em outras palavras, cria o arquivo `package.json` com as informações padrão.
 > 2. [`npm install express sqlite3 sqlite`](references/comandos.md#npm-install) - Instala as dependências do projeto.
 > 3. [`npm install --save-dev typescript nodemon ts-node @types/express`](references/comandos.md#npm-install-d) - Instala as dependências de desenvolvimento do projeto.
@@ -54,7 +56,8 @@ touch .gitignore
 > 11. [`touch src/database.ts`](references/comandos.md#touch) - Cria o arquivo `database.ts` na pasta `src`.
 > 12. [`touch .gitignore`](references/comandos.md#touch) - Cria o arquivo `.gitignore`.
 
-> ⚠️ **Notas**:
+> ⚠️ **Atenção**:
+>
 > 1. O comando `touch` não é nativo do Windows, o equivalente em sistemas Windows atuais é `ni <nome-do-arquivo>` e em sistemas mais antigos é `echo. > <nome-do-arquivo>`.
 
 ### Configuração dos scripts de execução no package.json
@@ -77,14 +80,16 @@ Adicione os seguintes scripts no arquivo `package.json`:
 }
 ```
 
-> ⚠️ **Notas**: 
+> ⚠️ **Atenção**: 
+> 
 > 1. `…` indica que partes do código foram omitidas para simplificar a leitura.
 > 2. O arquivo `package.json` por padrão já possui um script chamado `test`, que é utilizado para executar testes automatizados, porém, como este tutorial não aborda testes automatizados, o script `test` não foi mencionado e caso seja necessário, pode ser removido ou alterado.
 
 > 🧠 **Entendendo os Scripts**
-> - `npm start` - Inicia o servidor em ambiente de produção. Neste caso, executa o comando `node dist/index.js`.
-> - `npm run dev` - Inicia o servidor em ambiente de desenvolvimento, utilizando o `nodemon` para reiniciar o servidor sempre que houver alterações no código. Neste caso, executa o comando `nodemon src/index.ts`.
-> - `npm build` - Compila o código Typescript para Javascript. neste caso executa o comando `tsc -p .` que compila o código Typescript baseado nas configurações do arquivo `tsconfig.json`.
+>
+> 1. `npm start` - Inicia o servidor em ambiente de produção. Neste caso, executa o comando `node dist/index.js`.
+> 2. `npm run dev` - Inicia o servidor em ambiente de desenvolvimento, utilizando o `nodemon` para reiniciar o servidor sempre que houver alterações no código. Neste caso, executa o comando `nodemon src/index.ts`.
+> 3. `npm build` - Compila o código Typescript para Javascript. neste caso executa o comando `tsc -p .` que compila o código Typescript baseado nas configurações do arquivo `tsconfig.json`.
 
 ### Configuração do tsconfig.json
 
@@ -191,7 +196,8 @@ app.listen(port, () => {
 
 ⚡⚡⚡⚡DESCREVER O CÓDIGO AQUI: NÃO ESQUECER
 
-> ⚠️ **Notas**:
+> ⚠️ **Atenção**:
+>
 > 1. è muito importante notar que este código não é seguro para ser utilizado em produção, pois não há validação de dados, tratamento de erros, autenticação, autorização, etc. Este código é apenas um exemplo didático para fins de aprendizado.
 
 ### Configuração do public/index.html
@@ -417,7 +423,8 @@ document.addEventListener('submit', async (event) => {
 
 ⚡⚡⚡⚡DESCREVER O CÓDIGO AQUI: NÃO ESQUECER
 
-> ⚠️ **Notas**:
+> ⚠️ **Atenção**:
+>
 > 1. É muito importante notar que este código não é seguro para ser utilizado em produção, pois não há validação de dados, tratamento de erros, autenticação, autorização, etc. Este código é apenas um exemplo didático para fins de aprendizado.
 > 2. Este código também não apresenta feedback ao usuário, como mensagens de sucesso, somente uma mensagem de erro genérica utilizando alertas do navegador.
 
@@ -433,7 +440,8 @@ Para executar o projeto, basta executar o comando `npm run dev` no terminal. Est
 npm run dev
 ```
 
-> ⚠️ **Notas**:
+> ⚠️ **Atenção**:
+>
 > 1. O comando `npm run dev` é um script definido no arquivo `package.json` e é responsável por iniciar o servidor Express utilizando o `nodemon`.
 
 ### Testando o Projeto
@@ -441,8 +449,9 @@ npm run dev
 Para testar o projeto, basta abrir o navegador e acessar a URL `http://localhost:3000`. Nesta página, você verá um formulário para cadastrar usuários, alterar usuários e excluir usuários, além de exibir a lista de usuários cadastrados.
 
 > 💡 **Dica**
-> - Para testes de API REST sem antes criar um formulário, é possível ferramentas como o [Postman](https://www.postman.com), [Insomnia](https://insomnia.rest) ou [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) (extensão do Visual Studio Code).
-> - Este projeto não tem a necessidade de utilização de nenhum dessas ferramentas, pois os arquivos estáticos (HTML, CSS, JS) já possuem um formulário para testar as operações de [CRUD](references/glossario.md#crud).
+>
+> 1. Para testes de API REST sem antes criar um formulário, é possível ferramentas como o [Postman](https://www.postman.com), [Insomnia](https://insomnia.rest) ou [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) (extensão do Visual Studio Code).
+> 2. Este projeto não tem a necessidade de utilização de nenhum dessas ferramentas, pois os arquivos estáticos (HTML, CSS, JS) já possuem um formulário para testar as operações de [CRUD](references/glossario.md#crud).
 
 ## Enviando o Projeto para o GitHub
 
