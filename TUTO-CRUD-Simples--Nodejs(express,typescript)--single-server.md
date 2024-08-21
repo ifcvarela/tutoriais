@@ -187,6 +187,7 @@ O arquivo `index.html` será responsável por exibir um formulário para cadastr
   <script src="main.js" defer></script>
 </head>
 <body>
+  <h1>Cadastro de Usuários</h1>
   <main>
     <form>
       <div class="input-container">
@@ -223,6 +224,7 @@ O arquivo `main.css` será responsável por estilizar os formulários. Este não
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
@@ -239,8 +241,8 @@ main {
 }
 
 form {
-  display: inline-block;
   background-color: #fff;
+  display: inline-block;
   padding: 1.5rem;
   margin: 0;
   border-radius: 5px;
@@ -292,6 +294,13 @@ form button {
   color: #fff;
   font-weight: bold;
   cursor: pointer;
+}
+
+form button[data-action=cancel] {
+  background-color: transparent;
+  color: #dc3545;
+  margin-right: auto;
+  padding-inline: .5rem;
 }
 
 form button[data-action=update] {
@@ -389,3 +398,18 @@ document.addEventListener('submit', async (event) => {
 > ⚠️ **Notas**:
 > 1. É muito importante notar que este código não é seguro para ser utilizado em produção, pois não há validação de dados, tratamento de erros, autenticação, autorização, etc. Este código é apenas um exemplo didático para fins de aprendizado.
 > 2. Este código também não apresenta feedback ao usuário, como mensagens de sucesso, somente uma mensagem de erro genérica utilizando alertas do navegador.
+
+## Executando o Projeto
+
+Para executar o projeto, basta executar o comando `npm run dev` no terminal. Este comando irá iniciar o servidor Express utilizando o `nodemon`, que irá reiniciar o servidor sempre que houver alterações no código.
+
+```bash
+npm run dev
+```
+
+> ⚠️ **Notas**:
+> 1. O comando `npm run dev` é um script definido no arquivo `package.json` e é responsável por iniciar o servidor Express utilizando o `nodemon`.
+
+## Testando o Projeto
+
+Para testar o projeto, basta abrir o navegador e acessar a URL `http://localhost:3000`. Nesta página, você verá um formulário para cadastrar usuários, alterar usuários e excluir usuários, além de exibir a lista de usuários cadastrados.
