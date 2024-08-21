@@ -1,8 +1,26 @@
-# Inicializando o ambiente
+# CRUD Simples Monoservidor com Node.js, Typescript, Express e SQLite
 
-Este tutorial tem como objetivo criar um servidor simples utilizando Node.js com Express e Typescript, utilizando um banco de dados SQLite. O foco é ser o mais pratico possível, sem muitas explicações teóricas; porém todos os conceitos podem ser encontrados na documentação oficial de cada tecnologia e nos documento de referência.
+O propósito deste tutorial é criar um servidor simples utilizando Node.js com Express e Typescript, utilizando um banco de dados SQLite. O foco é ser o mais prático possível, sem muitas explicações teóricas; porém todos os conceitos podem ser encontrados na documentação oficial de cada tecnologia e nos documentos de referência.
 
-## Arquivos/Pastas e Inicialização do Projeto
+Neste projeto será criado um servidor único que servirá tanto os arquivos [estáticos (HTML, CSS, JS, imagens, etc)](references/glossario.md#arquivos-estaticos) enquanto uma [API RESTful](references/glossario.md#restful-api) para realizar operações de [CRUD (Create, Read, Update, Delete)](references/glossario.md#crud) em um banco de dados [SQLite](references/glossario.md#sqlite), não sendo necessário a implementação de [CORS (Cross-Origin Resource Sharing)](references/glossario.md#cors), pois o servidor e o cliente estarão no mesmo domínio.
+
+> ⚠️ **Aviso Importante**:
+> - Este não é um exemplo de aplicação pronta para produção, pois não possui validação de dados, tratamento de erros, autenticação, autorização, etc. Este é um exemplo didático para fins de aprendizado.
+
+## Pré-requisitos
+
+- [Node.js](https://nodejs.org)
+- [Visual Studio Code](https://code.visualstudio.com)
+- Conhecimento básico de Javascript
+- Conhecimento básico de Typescript
+- Conhecimento básico de HTML e CSS
+- Conhecimento básico de SQL
+
+## Boilerplate: Inicializando o Ambiente
+
+Neste tópico será abordado a inicialização do ambiente de desenvolvimento, criando a estrutura de pastas e arquivos necessários para o projeto. Chamamos isso de "boilerplate" ou "esqueleto" do projeto.
+
+### Arquivos/Pastas e Inicialização do Projeto
 
 ```bash
 npm init -y
@@ -39,7 +57,7 @@ touch .gitignore
 > ⚠️ **Notas**:
 > 1. O comando `touch` não é nativo do Windows, o equivalente em sistemas Windows atuais é `ni <nome-do-arquivo>` e em sistemas mais antigos é `echo. > <nome-do-arquivo>`.
 
-## Configuração dos scripts de execução no package.json
+### Configuração dos scripts de execução no package.json
 
 Scripts de execução são comandos que podem ser executados através do terminal, para isso, basta digitar `npm run <script>`, onde `<script>` é o nome do script que deseja executar.
 
@@ -68,13 +86,13 @@ Adicione os seguintes scripts no arquivo `package.json`:
 > - `npm run dev` - Inicia o servidor em ambiente de desenvolvimento, utilizando o `nodemon` para reiniciar o servidor sempre que houver alterações no código. Neste caso, executa o comando `nodemon src/index.ts`.
 > - `npm build` - Compila o código Typescript para Javascript. neste caso executa o comando `tsc -p .` que compila o código Typescript baseado nas configurações do arquivo `tsconfig.json`.
 
-## Configuração do tsconfig.json
+### Configuração do tsconfig.json
 
 Procure a linha `"outDir": "./",` e altere para `"outDir": "./dist",` para que os arquivos compilados sejam salvos na pasta `dist`.
 
 Não se esqueça de descomentar a linha, removendo o `//` do início da linha.
 
-## Configuração do .gitignore
+### Configuração do .gitignore
 
 O arquivo `.gitignore` é utilizado para informar ao Git quais arquivos e pastas devem ser ignorados ao realizar o controle de versão. Isso significa que os arquivos e pastas listados no arquivo `.gitignore` não serão enviados para o repositório remoto.
 
@@ -86,7 +104,11 @@ dist/
 database.sqlite
 ```
 
-## Configuração do src/database.ts
+## Desenvolvimento do Projeto
+
+Neste tópico será desenvolvido o projeto, criando o servidor Express, a conexão com o banco de dados SQLite, as rotas para o CRUD de usuários e os arquivos estáticos (HTML, CSS, JS).
+
+### Configuração do src/database.ts
 
 Este arquivo será responsável por criar a conexão com o banco de dados SQLite e criar a tabela de usuários caso ela não exista ou o banco de dados não exista.
 
@@ -117,7 +139,7 @@ export async function connect() {
 }
 ```
 
-## Configuração do src/index.ts
+### Configuração do src/index.ts
 
 Este arquivo será responsável por criar o servidor Express e definir as rotas para o [CRUD](references/glossario.md#crud)
  de usuários, em outras cria uma [API REST](references/glossario.md#restful-api) capaz de criar, ler, atualizar e deletar usuários, este servidor também servirá os arquivos estáticos da pasta `public` (como arquivos HTML, CSS, JS, imagens, etc).
@@ -172,7 +194,7 @@ app.listen(port, () => {
 > ⚠️ **Notas**:
 > 1. è muito importante notar que este código não é seguro para ser utilizado em produção, pois não há validação de dados, tratamento de erros, autenticação, autorização, etc. Este código é apenas um exemplo didático para fins de aprendizado.
 
-## Configuração do public/index.html
+### Configuração do public/index.html
 
 O arquivo `index.html` será responsável por exibir um formulário para cadastrar usuários, alterar usuários e excluir usuários, além de exibir a lista de usuários cadastrados.
 
@@ -209,7 +231,7 @@ O arquivo `index.html` será responsável por exibir um formulário para cadastr
 </html>
 ```
 
-## Configuração do public/main.css
+### Configuração do public/main.css
 
 O arquivo `main.css` será responsável por estilizar os formulários. Este não é um tutorial de [CSS](references/glossario.md#css), por isso, o foco é apenas estilizar os formulários de forma simples e funcional.
 
@@ -316,7 +338,7 @@ form button[data-action=create] {
 }
 ```
 
-## Configuração do public/main.js
+### Configuração do public/main.js
 
 O arquivo `main.js` será responsável por enviar requisições para o servidor, seja para cadastrar, alterar ou excluir usuários, além de exibir a lista de usuários cadastrados. Note que este arquivo faz requisições para as rotas definidas no arquivo `src/index.ts` que é quem de fatos executa as operações no banco de dados.
 
@@ -399,7 +421,11 @@ document.addEventListener('submit', async (event) => {
 > 1. É muito importante notar que este código não é seguro para ser utilizado em produção, pois não há validação de dados, tratamento de erros, autenticação, autorização, etc. Este código é apenas um exemplo didático para fins de aprendizado.
 > 2. Este código também não apresenta feedback ao usuário, como mensagens de sucesso, somente uma mensagem de erro genérica utilizando alertas do navegador.
 
-## Executando o Projeto
+## Execução e Teste do Projeto
+
+Neste tópico será abordado como executar e testar o projeto.
+
+### Executando o Projeto
 
 Para executar o projeto, basta executar o comando `npm run dev` no terminal. Este comando irá iniciar o servidor Express utilizando o `nodemon`, que irá reiniciar o servidor sempre que houver alterações no código.
 
@@ -410,6 +436,14 @@ npm run dev
 > ⚠️ **Notas**:
 > 1. O comando `npm run dev` é um script definido no arquivo `package.json` e é responsável por iniciar o servidor Express utilizando o `nodemon`.
 
-## Testando o Projeto
+### Testando o Projeto
 
 Para testar o projeto, basta abrir o navegador e acessar a URL `http://localhost:3000`. Nesta página, você verá um formulário para cadastrar usuários, alterar usuários e excluir usuários, além de exibir a lista de usuários cadastrados.
+
+> 💡 **Dica**
+> - Para testes de API REST sem antes criar um formulário, é possível ferramentas como o [Postman](https://www.postman.com), [Insomnia](https://insomnia.rest) ou [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) (extensão do Visual Studio Code).
+> - Este projeto não tem a necessidade de utilização de nenhum dessas ferramentas, pois os arquivos estáticos (HTML, CSS, JS) já possuem um formulário para testar as operações de [CRUD](references/glossario.md#crud).
+
+## Enviando o Projeto para o GitHub
+
+...
