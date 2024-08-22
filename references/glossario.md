@@ -369,6 +369,10 @@ A grande peculiaridade da RESTFul API é que ela utiliza os [métodos HTTP](#htt
 >
 > RESTFul vs REST: O termo RESTFul é utilizado para descrever uma API que segue os princípios da arquitetura REST, no entanto, o termo REST é utilizado para descrever a arquitetura em si, ou seja, a arquitetura REST é composta por um conjunto de princípios e regras, já a API RESTFul é uma API que segue esses princípios e regras.
 
+### Arquivos estáticos <a id=static-files />
+
+Arquivos estáticos são arquivos que não são processados pelo servidor, eles são enviados diretamente para o cliente sem nenhum processamento, por exemplo, arquivos HTML, CSS, Javascript, imagens, etc.
+
 ## HTML - HyperText Markup Language <a id=html />
 
 O HTML (HyperText Markup Language) é uma linguagem de marcação utilizada para criar páginas web, ela é composta por tags, as tags são utilizadas para estruturar o conteúdo da página, por exemplo, criar títulos, parágrafos, listas, links, imagens, etc.

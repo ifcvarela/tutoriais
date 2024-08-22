@@ -38,6 +38,7 @@ mkdir src
 touch src/index.ts
 touch src/database.ts
 
+git init
 touch .gitignore
 ```
 
@@ -54,7 +55,8 @@ touch .gitignore
 > 9. [`mkdir src`](references/comandos.md#mkdir) - Cria a pasta `src`.
 > 10. [`touch src/index.ts`](references/comandos.md#touch) - Cria o arquivo `index.ts` na pasta `src`.
 > 11. [`touch src/database.ts`](references/comandos.md#touch) - Cria o arquivo `database.ts` na pasta `src`.
-> 12. [`touch .gitignore`](references/comandos.md#touch) - Cria o arquivo `.gitignore`.
+> 12. [`git init`](references/comandos.md#git-init) - Inicializa um repositório Git.
+> 13. [`touch .gitignore`](references/comandos.md#touch) - Cria o arquivo `.gitignore`.
 
 > ⚠️ **Atenção**:
 >
@@ -103,9 +105,10 @@ O arquivo `.gitignore` é utilizado para informar ao Git quais arquivos e pastas
 
 Caso você não saiba o que é e como funciona o Git, leia no [documento de referência](references/glossario.md#git) sobre.
 
-```bash
+```plaintext
 node_modules/
 dist/
+
 database.sqlite
 ```
 
@@ -450,9 +453,10 @@ Para testar o projeto, basta abrir o navegador e acessar a URL `http://localhost
 
 > 💡 **Dica**
 >
-> 1. Para testes de API REST sem antes criar um formulário, é possível ferramentas como o [Postman](https://www.postman.com), [Insomnia](https://insomnia.rest) ou [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) (extensão do Visual Studio Code).
-> 2. Este projeto não tem a necessidade de utilização de nenhum dessas ferramentas, pois os arquivos estáticos (HTML, CSS, JS) já possuem um formulário para testar as operações de [CRUD](references/glossario.md#crud).
+> 1. Para testar [APIs REST](references/glossario.md#restful-api) antes do desenvolvimento de um cliente ([Front-end](references/glossario.md#frontend)), é possível com ferramentas como o [Postman](https://www.postman.com), [Insomnia](https://insomnia.rest) ou [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) (extensão do Visual Studio Code).
+> 2. Também é possivel utilizar o [curl](https://curl.se) para testar as requisições direto em seu terminal, porém, é mais complexo e menos visual.
+> 3. Este projeto não tem a necessidade de utilização de nenhum dessas ferramentas, pois os [arquivos estáticos (HTML, CSS, JS)](references/glossario.md#static-files) já possuem capacidade para testar as operações de [CRUD](references/glossario.md#crud).
 
-## Enviando o Projeto para o GitHub
+## Salvando o Projeto no Repositório (Git e GitHub)
 
 ...
