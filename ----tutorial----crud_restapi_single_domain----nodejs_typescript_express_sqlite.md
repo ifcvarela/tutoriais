@@ -10,7 +10,7 @@ Neste projeto será criado um servidor único que servirá tanto os arquivos [es
 
 ## Pré-requisitos
 
-- [Node.js](https://nodejs.org)
+- [Node.js e NPM](https://nodejs.org)
 - [Visual Studio Code](https://code.visualstudio.com)
 - Conhecimento básico de Javascript
 - Conhecimento básico de Typescript
@@ -23,7 +23,7 @@ Neste tópico será abordado a inicialização do ambiente de desenvolvimento, c
 
 ### Arquivos/Pastas e Inicialização do Projeto
 
-```sh
+```bash
 npm init -y
 npm install express sqlite3 sqlite
 npm install --save-dev typescript nodemon ts-node @types/express
