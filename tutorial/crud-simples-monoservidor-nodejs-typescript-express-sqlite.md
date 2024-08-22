@@ -1,8 +1,8 @@
-# CRUD Simples Monoservidor com Node.js, Typescript, Express e SQLite
+# CRUD Simples Monoservidor com Node.js (Typescript, Express) e SQLite
 
 O propósito deste tutorial é criar um servidor simples utilizando Node.js com Express e Typescript, utilizando um banco de dados SQLite. O foco é ser o mais prático possível, sem muitas explicações teóricas; porém todos os conceitos podem ser encontrados na documentação oficial de cada tecnologia e nos documentos de referência.
 
-Neste projeto será criado um servidor único que servirá tanto os arquivos [estáticos (HTML, CSS, JS, imagens, etc)](references/glossario.md#arquivos-estaticos) enquanto uma [API RESTful](references/glossario.md#restful-api) para realizar operações de [CRUD (Create, Read, Update, Delete)](references/glossario.md#crud) em um banco de dados [SQLite](references/glossario.md#sqlite), não sendo necessário a implementação de [CORS (Cross-Origin Resource Sharing)](references/glossario.md#cors), pois o servidor e o cliente estarão no mesmo domínio.
+Neste projeto será criado um servidor único que servirá tanto os arquivos [estáticos (HTML, CSS, JS, imagens, etc)](../referencias/glossario.md#arquivos-estaticos) enquanto uma [API RESTful](../referencias/glossario.md#restful-api) para realizar operações de [CRUD (Create, Read, Update, Delete)](../referencias/glossario.md#crud) em um banco de dados [SQLite](../referencias/glossario.md#sqlite), não sendo necessário a implementação de [CORS (Cross-Origin Resource Sharing)](../referencias/glossario.md#cors), pois o servidor e o cliente estarão no mesmo domínio.
 
 > ⚠️ **Aviso Importante**:
 >
@@ -17,8 +17,8 @@ Certifique-se de ter os seguintes pré-requisitos instalados em seu computador:
 
 > 💡 **Dica**
 >
-> 1. É possível a utilização do codespace do GitHub para executar este projeto sem a necessidade de instalar nada em seu computador, basta acessar o repositório no GitHub e clicar no botão "Code" e selecionar a opção "Open with Codespaces".
-> 2. [tutotial codespace](tutorial/codespace.md)
+> 1. É possível a utilização do [codespace do GitHub](codespace.md) para executar este projeto substituindo a necessidade de instalar o Node.js e o Visual Studio Code em seu computador. Os codespaces são ambientes de desenvolvimento em nuvem. Para entender o necessário para utilizar o codespace leia o [tutotial codespace](codespace.md).
+> 2. Para maiores informações de como usar o codespace leia o [tutotial codespace](codespace.md)
 
 Certifique-se de ter os seguintes conhecimentos básicos:
 
@@ -54,19 +54,19 @@ touch .gitignore
 
 > 🧠 **Entendendo os Comandos Utilizados**
 >
-> 1. [`npm init -y`](references/comandos.md#npm-init-y) - Inicializa um projeto Node.js com as configurações padrão. em outras palavras, cria o arquivo `package.json` com as informações padrão.
-> 2. [`npm install express sqlite3 sqlite`](references/comandos.md#npm-install) - Instala as dependências do projeto.
-> 3. [`npm install --save-dev typescript nodemon ts-node @types/express`](references/comandos.md#npm-install-d) - Instala as dependências de desenvolvimento do projeto.
-> 4. [`npx tsc --init`](references/comandos.md#tsc-init) - Inicializa o arquivo de configuração do Typescript. Em outras palavras, cria o arquivo `tsconfig.json`.
-> 5. [`mkdir public`](references/comandos.md#mkdir) - Cria a pasta `public`.
-> 6. [`touch public/index.html`](references/comandos.md#touch) - Cria o arquivo `index.html` na pasta `public`.
-> 7. [`touch public/main.css`](references/comandos.md#touch) - Cria o arquivo `main.css` na pasta `public`.
-> 8. [`touch public/main.js`](references/comandos.md#touch) - Cria o arquivo `main.js` na pasta `public`.
-> 9. [`mkdir src`](references/comandos.md#mkdir) - Cria a pasta `src`.
-> 10. [`touch src/index.ts`](references/comandos.md#touch) - Cria o arquivo `index.ts` na pasta `src`.
-> 11. [`touch src/database.ts`](references/comandos.md#touch) - Cria o arquivo `database.ts` na pasta `src`.
-> 12. [`git init`](references/comandos.md#git-init) - Inicializa um repositório Git.
-> 13. [`touch .gitignore`](references/comandos.md#touch) - Cria o arquivo `.gitignore`.
+> 1. [`npm init -y`](../referencias/comandos.md#npm-init-y) - Inicializa um projeto Node.js com as configurações padrão. em outras palavras, cria o arquivo `package.json` com as informações padrão.
+> 2. [`npm install express sqlite3 sqlite`](../referencias/comandos.md#npm-install) - Instala as dependências do projeto.
+> 3. [`npm install --save-dev typescript nodemon ts-node @types/express`](../referencias/comandos.md#npm-install-d) - Instala as dependências de desenvolvimento do projeto.
+> 4. [`npx tsc --init`](../referencias/comandos.md#tsc-init) - Inicializa o arquivo de configuração do Typescript. Em outras palavras, cria o arquivo `tsconfig.json`.
+> 5. [`mkdir public`](../referencias/comandos.md#mkdir) - Cria a pasta `public`.
+> 6. [`touch public/index.html`](../referencias/comandos.md#touch) - Cria o arquivo `index.html` na pasta `public`.
+> 7. [`touch public/main.css`](../referencias/comandos.md#touch) - Cria o arquivo `main.css` na pasta `public`.
+> 8. [`touch public/main.js`](../referencias/comandos.md#touch) - Cria o arquivo `main.js` na pasta `public`.
+> 9. [`mkdir src`](../referencias/comandos.md#mkdir) - Cria a pasta `src`.
+> 10. [`touch src/index.ts`](../referencias/comandos.md#touch) - Cria o arquivo `index.ts` na pasta `src`.
+> 11. [`touch src/database.ts`](../referencias/comandos.md#touch) - Cria o arquivo `database.ts` na pasta `src`.
+> 12. [`git init`](../referencias/comandos.md#git-init) - Inicializa um repositório Git.
+> 13. [`touch .gitignore`](../referencias/comandos.md#touch) - Cria o arquivo `.gitignore`.
 
 > ⚠️ **Atenção**:
 >
@@ -113,7 +113,7 @@ Não se esqueça de descomentar a linha, removendo o `//` do início da linha.
 
 O arquivo `.gitignore` é utilizado para informar ao Git quais arquivos e pastas devem ser ignorados ao realizar o controle de versão. Isso significa que os arquivos e pastas listados no arquivo `.gitignore` não serão enviados para o repositório remoto.
 
-Caso você não saiba o que é e como funciona o Git, leia no [documento de referência](references/glossario.md#git) sobre.
+Caso você não saiba o que é e como funciona o Git, leia no [documento de referência](../referencias/glossario.md#git) sobre.
 
 ```plaintext
 node_modules/
@@ -159,8 +159,8 @@ export async function connect() {
 
 ### Configuração do src/index.ts
 
-Este arquivo será responsável por criar o servidor Express e definir as rotas para o [CRUD](references/glossario.md#crud)
- de usuários, em outras cria uma [API REST](references/glossario.md#restful-api) capaz de criar, ler, atualizar e deletar usuários, este servidor também servirá os arquivos estáticos da pasta `public` (como arquivos HTML, CSS, JS, imagens, etc).
+Este arquivo será responsável por criar o servidor Express e definir as rotas para o [CRUD](../referencias/glossario.md#crud)
+ de usuários, em outras cria uma [API REST](../referencias/glossario.md#restful-api) capaz de criar, ler, atualizar e deletar usuários, este servidor também servirá os arquivos estáticos da pasta `public` (como arquivos HTML, CSS, JS, imagens, etc).
 
 ```typescript
 import express from 'express'
@@ -252,7 +252,7 @@ O arquivo `index.html` será responsável por exibir um formulário para cadastr
 
 ### Configuração do public/main.css
 
-O arquivo `main.css` será responsável por estilizar os formulários. Este não é um tutorial de [CSS](references/glossario.md#css), por isso, o foco é apenas estilizar os formulários de forma simples e funcional.
+O arquivo `main.css` será responsável por estilizar os formulários. Este não é um tutorial de [CSS](../referencias/glossario.md#css), por isso, o foco é apenas estilizar os formulários de forma simples e funcional.
 
 ```css
 * {
@@ -463,9 +463,9 @@ Para testar o projeto, basta abrir o navegador e acessar a URL `http://localhost
 
 > 💡 **Dica**
 >
-> 1. Para testar [APIs REST](references/glossario.md#restful-api) antes do desenvolvimento de um cliente ([Front-end](references/glossario.md#frontend)), é possível com ferramentas como o [Postman](https://www.postman.com), [Insomnia](https://insomnia.rest) ou [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) (extensão do Visual Studio Code).
+> 1. Para testar [APIs REST](../referencias/glossario.md#restful-api) antes do desenvolvimento de um cliente ([Front-end](../referencias/glossario.md#frontend)), é possível com ferramentas como o [Postman](https://www.postman.com), [Insomnia](https://insomnia.rest) ou [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) (extensão do Visual Studio Code).
 > 2. Também é possivel utilizar o [curl](https://curl.se) para testar as requisições direto em seu terminal, porém, é mais complexo e menos visual.
-> 3. Este projeto não tem a necessidade de utilização de nenhum dessas ferramentas, pois os [arquivos estáticos (HTML, CSS, JS)](references/glossario.md#static-files) já possuem capacidade para testar as operações de [CRUD](references/glossario.md#crud).
+> 3. Este projeto não tem a necessidade de utilização de nenhum dessas ferramentas, pois os [arquivos estáticos (HTML, CSS, JS)](../referencias/glossario.md#static-files) já possuem capacidade para testar as operações de [CRUD](../referencias/glossario.md#crud).
 
 ## Salvando o Projeto no Repositório (Git e GitHub)
 
