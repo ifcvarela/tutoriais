@@ -23,7 +23,7 @@ Neste tópico será abordado a inicialização do ambiente de desenvolvimento, c
 
 ### Arquivos/Pastas e Inicialização do Projeto
 
-```bash
+```sh
 npm init -y
 npm install express sqlite3 sqlite
 npm install --save-dev typescript nodemon ts-node @types/express
