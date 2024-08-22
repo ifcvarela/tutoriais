@@ -10,8 +10,18 @@ Neste projeto será criado um servidor único que servirá tanto os arquivos [es
 
 ## Pré-requisitos
 
+Certifique-se de ter os seguintes pré-requisitos instalados em seu computador:
+
 - [Node.js e NPM](https://nodejs.org)
 - [Visual Studio Code](https://code.visualstudio.com)
+
+> 💡 **Dica**
+>
+> 1. É possível a utilização do codespace do GitHub para executar este projeto sem a necessidade de instalar nada em seu computador, basta acessar o repositório no GitHub e clicar no botão "Code" e selecionar a opção "Open with Codespaces".
+> 2. [tutotial codespace](tutorial/codespace.md)
+
+Certifique-se de ter os seguintes conhecimentos básicos:
+
 - Conhecimento básico de Javascript
 - Conhecimento básico de Typescript
 - Conhecimento básico de HTML e CSS
