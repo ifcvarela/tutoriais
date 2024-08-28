@@ -1,5 +1,29 @@
 # Glossário
 
+- Glossário
+  - [Singletons](#singletons)
+  - [CRUD - Create, Read, Update, Delete](#crud)
+  - [Path (_Caminho ou Diretório ou Endedereço ou Rota, etc._)](#file-path)
+  - [Cliente e Servidor](#client-server)
+    - [Cliente (_Client_)](#client)
+    - [Servidor (_Server_)](#server)
+  - [JSON - Javascript Object Notation](#json---javascript-object-notation)
+  - [Endereço IP](#endereço-ip)
+  - [Porta (redes de computadores)](#porta-redes-de-computadores)
+  - [URL - Uniform Resource Locator](#url---uniform-resource-locator)
+    - [URL: Query String](#url-query)
+  - [Protocolo HTTP](#protocolo-http)
+    - [Requisição HTTP](#requisição-http)
+      - [Métodos HTTP](#métodos-http)
+    - [Resposta HTTP](#resposta-http)
+      - [Status Code](#status-code)
+    - [Similaridades e Diferenças entre Requisição e Resposta HTTP](#similaridades-e-diferenças-entre-requisição-e-resposta-http)
+  - [API - Application Programming Interface](#api)
+
+## Singletons <a id=singletons />
+
+Singleton é um padrão de projeto utilizado para garantir que uma classe tenha somente uma instância e forneça um ponto de acesso global a essa instância, ele é utilizado para garantir que uma classe tenha somente uma instância e forneça um ponto de acesso global a essa instância.
+
 ## CRUD - Create, Read, Update, Delete <a id=crud />
 
 CRUD é um acrônimo para Create, Read, Update, Delete, ele é utilizado para descrever as operações básicas de um sistema, as operações são:

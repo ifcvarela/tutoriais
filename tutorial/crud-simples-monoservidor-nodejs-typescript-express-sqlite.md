@@ -131,18 +131,19 @@ Neste tópico será desenvolvido o projeto, criando o servidor Express, a conex�
 Este arquivo será responsável por criar a conexão com o banco de dados SQLite e criar a tabela de usuários caso ela não exista ou o banco de dados não exista.
 
 ```typescript
-import { open, Database } from 'sqlite';
-import sqlite3 from 'sqlite3';
+import { open, Database } from 'sqlite'
+import sqlite3 from 'sqlite3'
 
-let instance: Database | null = null;
+let instance: Database | null = null
 
 export async function connect() {
-  if (instance) return instance;
+  if (instance) 
+    return instance
 
   const db = await open({
-     filename: './src/database.sqlite',
-     driver: sqlite3.Database
-   });
+    filename: 'database.sqlite',
+    driver: sqlite3.Database
+  })
   
   await db.exec(`
     CREATE TABLE IF NOT EXISTS users (
@@ -150,10 +151,10 @@ export async function connect() {
       name TEXT,
       email TEXT
     )
-  `);
+  `)
 
-  instance = db;
-  return db;
+  instance = db
+  return db
 }
 ```
 
