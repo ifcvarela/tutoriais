@@ -17,8 +17,8 @@ Certifique-se de ter os seguintes pré-requisitos instalados em seu computador:
 
 > 💡 **Dica**
 >
-> 1. É possível a utilização do [codespace do GitHub](codespace.md) para executar este projeto substituindo a necessidade de instalar o Node.js e o Visual Studio Code em seu computador. Os codespaces são ambientes de desenvolvimento em nuvem. Para entender o necessário para utilizar o codespace leia o [tutotial codespace](codespace.md).
-> 2. Para maiores informações de como usar o codespace leia o [tutotial codespace](codespace.md)
+> 1. É possível a utilização do [codespace do GitHub](codespace.md) para executar este projeto substituindo a necessidade de instalar o Node.js e o Visual Studio Code em seu computador. Os codespaces são ambientes de desenvolvimento em nuvem. Para entender o necessário para utilizar o codespace leia o [tutorial codespace](codespace.md).
+> 2. Para maiores informações de como usar o codespace leia o [tutorial codespace](codespace.md)
 
 Certifique-se de ter os seguintes conhecimentos básicos:
 
